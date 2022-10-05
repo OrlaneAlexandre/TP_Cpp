@@ -3,11 +3,9 @@
 
 using namespace std;
 
-int main(int argc, char* arg[])
+int main(string chemin, string motif)
 {
-    string doc = arg[1];
-    string motif = arg[2];
-    ifstream fichier(doc, ios::in);
+    ifstream fichier(chemin, ios::in);
     int somme = 0;
     if (fichier)  
     {
@@ -40,11 +38,11 @@ int main(int argc, char* arg[])
                 }
             }
         }
-        cout << "The file " << doc << " contains " << somme << " words containing the motive " << motif << "\n" << endl;
+        cout << "The file " << chemin << " contains " << somme << " words containing the motive " << motif << "\n" << endl;
         fichier.close();  
     }
     else  
-        cout << "The file " << doc << " could not be opened. \n" << endl;
+        cout << "The file " << chemin << " could not be opened. \n" << endl;
 
     return 0;
 }
