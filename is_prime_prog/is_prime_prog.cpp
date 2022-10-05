@@ -28,7 +28,8 @@ bool isPrime(int nb)
 int main()
 {
 	int nb;
-	while (cin >> nb)
+	cin >> nb;
+	while (cin)
 	{
 		if (isPrime(nb))
 		{
@@ -38,6 +39,7 @@ int main()
 		{
 			cout << nb << " is a prime: False \n";
 		}
+		cin >> nb;
 	}
 	return 0;
 }
