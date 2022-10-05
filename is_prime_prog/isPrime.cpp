@@ -28,16 +28,15 @@ bool isPrime(int nb)
 void main()
 {
 	int nb;
-	cout << "Entrez des nombres : " << endl;
 	while (cin >> nb)
 	{
 		if (isPrime(nb))
 		{
-			cout << nb << ": le nombre est premier \n";
+			cout << nb << " is a prime: True \n";
 		}
 		else
 		{
-			cout << nb << ": le nombre n'est pas premier \n";
+			cout << nb << " is a prime: False \n";
 		}
 	}
 }
