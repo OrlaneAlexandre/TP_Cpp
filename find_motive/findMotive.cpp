@@ -5,10 +5,8 @@ using namespace std;
 
 int main()
 {
-    cout << "Veuillez ecrire le chemin de fichier : ";
     string doc;
     cin >> doc;
-    cout << "Veuillez ecrire un motif : ";
     string motif;
     cin >> motif;
     ifstream fichier(doc, ios::in);
@@ -46,7 +44,7 @@ int main()
         fichier.close();  
     }
     else  
-        cout << "The file " << doc << " could not be opened \n" << endl;
+        cout << "The file " << doc << " could not be opened. \n" << endl;
 
     return 0;
 }
