@@ -3,7 +3,7 @@
 #include <string>
 using namespace std;
 
-bool isPrime(int nb)
+bool isPrime(long long nb)
 {
 	if (nb <= 1)
 	{
@@ -26,7 +26,7 @@ bool isPrime(int nb)
 
 int main()
 {
-	int nb;
+	long long nb;
 	cin >> nb;
 	while (cin)
 	{
