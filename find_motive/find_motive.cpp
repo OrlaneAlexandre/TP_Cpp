@@ -3,8 +3,10 @@
 
 using namespace std;
 
-int main(string chemin, string motif)
+int main(int argc, char* argv[])
 {
+    string chemin = argv[1];
+    string motif = argv[2];
     ifstream fichier(chemin, ios::in);
     int somme = 0;
     if (fichier)  
