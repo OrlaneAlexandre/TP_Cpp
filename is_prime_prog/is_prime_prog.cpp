@@ -28,17 +28,14 @@ int main()
 {
 	long long nb;
 	cin >> nb;
-	while (cin)
+	if (isPrime(nb))
 	{
-		if (isPrime(nb))
-		{
-			cout << nb << " is a prime: True" << endl;
-		}
-		else
-		{
-			cout << nb << " is a prime: False" << endl;
-		}
-		cin >> nb;
+		cout << nb << " is a prime: True" << endl;
 	}
+	else
+	{
+		cout << nb << " is a prime: False" << endl;
+	}
+	
 	return 0;
 }
