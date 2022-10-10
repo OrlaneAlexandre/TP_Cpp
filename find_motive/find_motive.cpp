@@ -40,11 +40,11 @@ int main(int argc, char* argv[])
                 }
             }
         }
-        cout << "The file " << chemin << " contains " << somme << " words containing the motive " << motif << "\n" << endl;
+        cout << "The file " << chemin << " contains " << somme << " words containing the motive " << motif << endl;
         fichier.close();  
     }
     else  
-        cout << "The file " << chemin << " could not be opened. \n" << endl;
+        cout << "The file " << chemin << " could not be opened." << endl;
 
     return 0;
 }
