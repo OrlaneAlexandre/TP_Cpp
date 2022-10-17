@@ -18,11 +18,8 @@ public:
 
 // Add suitable constructors
     Vector() = default;
-    Vector(initializer_list<value> v)
-    {
-        auto* p = data(v);
-        v.size() == NDIM;
-    }
+    Vector(initializer_list<value> v);
+    
     // possibly more
 
 // Public Member functions here
