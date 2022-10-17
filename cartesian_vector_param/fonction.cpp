@@ -1,9 +1,20 @@
 #include <iostream>
 #include "config.h"
 #include "vector.hh"
-using namespace std;
+using namespace std; 
 
-
+Vector::Vector(initializer_list<value> v)
+{
+        if (v.size() != NDIM)
+         {
+             runtime_error("taille incorecte");
+         }
+        auto i = v.begin();
+        for (int j = 0; j < NDIM; j++)
+        {
+            this->membre[j] = *(i + j);
+        }
+}
 
 Vector &Vector::operator+=(const Vector& rhs)
 {
