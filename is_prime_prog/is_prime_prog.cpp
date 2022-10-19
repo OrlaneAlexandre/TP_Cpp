@@ -32,7 +32,7 @@ int main()
 		if (isPrime(nb))
 		{
 			cout << nb << " is a prime: True" << endl;
-		
+		}
 		else
 		{
 			cout << nb << " is a prime: False" << endl;
