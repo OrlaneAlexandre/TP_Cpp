@@ -3,22 +3,26 @@
 #include "vector.hh"
 using namespace std; 
 
-Vector::Vector(initializer_list<value> v)
+Vector::Vector()
 {
-        if (v.size() != NDIM)
-         {
-             runtime_error("taille incorecte");
-         }
-        auto i = v.begin();
         for (int j = 0; j < NDIM; j++)
         {
-            this->membre[j] = *(i + j);
+            this->membre[j] = 0;
+        }
+}
+
+Vector::Vector(initializer_list<value> v)
+{
+        auto p = data();
+        for (int j = 0; j < NDIM; j++)
+        {
+            this->membre[j] = p[j];
         }
 }
 
 Vector &Vector::operator+=(const Vector& rhs)
 {
-	Vector V = Vector{};
+	auto V = Vector{};
 	for (int i = 0; i < NDIM; i++)
 	{
 		V.membre[i] = this->membre[i] + rhs.membre[i];
@@ -28,7 +32,7 @@ Vector &Vector::operator+=(const Vector& rhs)
 
 Vector& Vector::operator-=(const Vector& rhs)
 {
-	Vector V = Vector{};
+	auto V = Vector{};
 	for (int i = 0; i < NDIM; i++)
 	{
 		V.membre[i] = this->membre[i] - rhs.membre[i];
@@ -38,7 +42,7 @@ Vector& Vector::operator-=(const Vector& rhs)
 
 Vector& Vector::operator*=(const value v)
 {
-	Vector V = Vector{};
+	auto V = Vector{};
 	for (int i = 0; i < NDIM; i++)
 	{
 		V.membre[i] = this->membre[i] * v;
@@ -48,7 +52,7 @@ Vector& Vector::operator*=(const value v)
 
 Vector& Vector::operator*(const value v)
 {
-	Vector V = Vector{};
+	auto V = Vector{};
 	for (int i = 0; i < NDIM; i++)
 	{
 		V.membre[i] = this->membre[i] * v;
@@ -58,7 +62,7 @@ Vector& Vector::operator*(const value v)
 
 Vector& Vector::operator+=(const value v)
 {
-	Vector V = Vector{};
+	auto V = Vector{};
 	for (int i = 0; i < NDIM; i++)
 	{
 		V.membre[i] = this->membre[i] + v;
@@ -68,7 +72,7 @@ Vector& Vector::operator+=(const value v)
 
 Vector& Vector::operator+(const Vector& rhs)
 {
-	Vector V = Vector{};
+	auto V = Vector{};
 	for (int i = 0; i < NDIM; i++)
 	{
 		V.membre[i] = this->membre[i] + rhs.membre[i];
@@ -93,9 +97,11 @@ value& Vector::operator[](const int v)
 
 ostream& operator<<(ostream& out, Vector V)
 {
-	out << '{ ';
-	for (int i = 0; i < NDIM; i++)
+	out << '{';
+	out << v[0];
+	for (int i = 1; i < NDIM; i++)
 	{
+		out << ',';
 		out << V[i];
 	}
 	out << '}';
