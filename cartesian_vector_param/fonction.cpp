@@ -22,32 +22,29 @@ Vector::Vector(initializer_list<value> v)
 
 Vector &Vector::operator+=(const Vector& rhs)
 {
-	auto V = Vector{};
 	for (int i = 0; i < NDIM; i++)
 	{
-		V.membre[i] = this->membre[i] + rhs.membre[i];
+		this->membre[i] += rhs.membre[i];
 	}
-	return V;
+	return *this;
 }
 
 Vector& Vector::operator-=(const Vector& rhs)
 {
-	auto V = Vector{};
 	for (int i = 0; i < NDIM; i++)
 	{
-		V.membre[i] = this->membre[i] - rhs.membre[i];
+		this->membre[i] -= rhs.membre[i];
 	}
-	return V;
+	return *this;
 }
 
 Vector& Vector::operator*=(const value v)
 {
-	auto V = Vector{};
 	for (int i = 0; i < NDIM; i++)
 	{
-		V.membre[i] = this->membre[i] * v;
+		this->membre[i] *= v;
 	}
-	return V;
+	return *this;
 }
 
 Vector& Vector::operator*(const value v)
@@ -62,12 +59,11 @@ Vector& Vector::operator*(const value v)
 
 Vector& Vector::operator+=(const value v)
 {
-	auto V = Vector{};
 	for (int i = 0; i < NDIM; i++)
 	{
-		V.membre[i] = this->membre[i] + v;
+		this->membre[i] += v;
 	}
-	return V;
+	return *this;
 }
 
 Vector& Vector::operator+(const Vector& rhs)
