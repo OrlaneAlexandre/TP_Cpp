@@ -17,7 +17,7 @@ public:
 //
 
 // Add suitable constructors
-    Vector() = default;
+    Vector();
     Vector(initializer_list<value> v);
     
     // possibly more
