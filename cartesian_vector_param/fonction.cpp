@@ -1,6 +1,7 @@
 #include <iostream>
 #include "config.h"
 #include "vector.hh"
+#include <initializer_list>
 using namespace std; 
 
 Vector::Vector()
@@ -13,7 +14,7 @@ Vector::Vector()
 
 Vector::Vector(initializer_list<value> v)
 {
-        auto p = data();
+        auto p = data(v);
         for (int j = 0; j < NDIM; j++)
         {
             this->membre[j] = p[j];
