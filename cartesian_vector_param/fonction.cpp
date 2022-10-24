@@ -95,7 +95,7 @@ value& Vector::operator[](const int v)
 ostream& operator<<(ostream& out, Vector V)
 {
 	out << '{';
-	out << v[0];
+	out << V[0];
 	for (int i = 1; i < NDIM; i++)
 	{
 		out << ',';
