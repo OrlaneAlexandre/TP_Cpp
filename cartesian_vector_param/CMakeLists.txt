@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.0)
 project(cartesian_vector_param)
 
 # add the lib
-add_library(mysource STATIC fonction.cpp)
+add_library(mysource SHARED fonction.cpp)
 
 # add another
 #add_library(mysource_2 SHARED sources_2.cpp)
