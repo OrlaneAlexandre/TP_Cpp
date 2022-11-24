@@ -50,7 +50,7 @@ bool collisionMurHauteur(int x_, int l_)
 
 bool collisionMurLargeur(int y_, int h_)
 {
-    if (y_ < frame_rate || (y_ + h_) > (frame_height - frame_rate))
+    if (y_ < frame_boundary || (y_ + h_) > (frame_height - frame_boundary))
     {
         return true;
     }
